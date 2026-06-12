@@ -1,6 +1,18 @@
 import argparse
 import requests
 import socket
+import json
+import os
+from rich.console import Console 
+
+#Initialize the Rich console for colors
+console = Console()
+
+def save_report(data, filename):
+    #Create a reports folder if it doesn't exist
+    os.makedirs("reports", exist_ok=True)
+    filepath = os.path.join("reports", filename)
+
 
 def check_username(username):
     print(f"\n[*] Scanning across multiple platforms for: {username}...\n")
