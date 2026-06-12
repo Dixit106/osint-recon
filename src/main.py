@@ -13,7 +13,7 @@ def check_username(username):
     }
 
 #looping through each platform
-    for platforms, url in platforms.items():
+    for platform, url in platforms.items():
         try:
         # We need user-Agent so website don't immediately block out bot
             headers = {"User-Agent": "Mozilla/5.0"}
@@ -40,7 +40,7 @@ def check_domain(domain):
         print(f"[+] Target IP Address: {ip_address}")
 
         #free api to locate the IP address
-        geo_url = f"https://ipapi.co/{ip_address}/json/"
+        geo_url = f"http://ip-api.com/json/{ip_address}"
         headers = {"User-Agent": "Mozilla/5.0"}
         response= requests.get(geo_url, headers=headers, timeout=5)
 
@@ -56,7 +56,7 @@ def check_domain(domain):
         print("[!] Error: Invalid domain name or connection failure.")
     except Exception as e:
         print(f"[!] Error gathering intel: {e}")
-                        
+
 def main():
     #setting up argument parser
     parser = argparse.ArgumentParser(description="A Simple OSINT Recon Tool")
