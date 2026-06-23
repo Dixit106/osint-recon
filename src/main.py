@@ -84,7 +84,7 @@ def check_domain(domain):
             results["location"] = loc 
         else:
             console.print(f"[bold red][-][/bold red] Could not retrieve geolocation details.")
-       
+
     except socket.gaierror:
         console.print("[bold red][!][/bold red] Error: Invalid domain name or connection failure.")
     except Exception as e:
@@ -110,13 +110,16 @@ def main():
 
     #check if user actually provide a username
     if args.username:
-        print(f"[*] Target Username Locked: {args.username}")
-        check_username(args.username)
+        console.print(f"[bold yellow][*] Target Username Locked: {args.username}[/bold yellow]")
+        report_data = check_username(args.username)
     elif args.domain:
-        print(f"[*] Target Domain Locked: {args.domain}")
-        check_domain(args.domain)    
+        console.print(f"[bold yellow][*] Target Domain Locked: {args.domain}[/bold yellow]")
+        report_data = check_domain(args.domain)    
     else:
-        print("[!] Error: Please provide an argument. Use -h or --help for instructions.")
+       console.print("[bold red][!][/bold red] Error: Please provide an argument. Use -h or --help for instructions.")
+
+    if args.output and report_data:
+        save_report(report_data, args.output)    
 
 if __name__ == "__main__":
     main()        
