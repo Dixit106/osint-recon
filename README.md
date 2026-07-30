@@ -65,7 +65,7 @@ To contribute, you can use this code as foundation for your own project and tool
 **Clone the repository:**
 
 ```Bash
-git clone https://github.com/Dixit106/osint-recon
+git clone https://github.com/Dixit106/Shadow-Trace
 ```
 After you have files for this project you can open terminal use "cd" to open this folder and type python main.py -u "xyzusername" to get started. You will understand more when you actually use this tool.
 
