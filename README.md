@@ -11,6 +11,7 @@ In tech terms this tool automates basic target footprinting, domain infrastructu
 While you could do some of this manually on a search engine, this tool automates the repetitive work. More importantly, it is built to be a foundation. Because it exports data cleanly to a JSON file, any developer can easily add more APIs and website URLs to the code to make it a massive, highly useful intelligence tool.
 
 **More on how it works side:-**
+
 Python: The core programming language tying it all together.
 
 Networking (socket & requests): I used Python's built-in socket library to translate website names (like example.com) into real IP addresses. Then, I used the requests library to ping social media sites to see if a username page actually exists (checking if the website returns a '200 OK' or a '404 Not Found').
