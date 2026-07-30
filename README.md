@@ -1,12 +1,23 @@
-# Project_Focus_Dial
+# OSINT-RECON
 
 # Why I Made This Project
-Everyone who is into tech has at least once thought about being a hacker or do hacking stuff for fun. I mean hacking feels very cool power that we can have so just to get a bit of taste of cyber security/hacking I tried to make a very simple OSINT tool using python.
+Everyone who is into tech has at least once thought about being a hacker or doing hacking stuff for fun. I mean, hacking feels like a very cool power that we can have. Just to get a bit of a taste of cybersecurity and hacking, I decided to build a simple OSINT (Open Source Intelligence) tool using Python.
 
 # What Even Is This Project
-This project is a simple small osint tool which uses python as core programming language. Using this tool I can find people with "xyz" username on few websites like github, snapchat few more. I can also use this tool to find ip address of websites, details about their hosting and country,state they are bring hosted from.
+This project is a small OSINT tool that uses Python as its core programming language. Using this tool, I can search for a specific "xyz" username across different websites (like GitHub, Snapchat, Linktree) to see if that person exists there. I can also use this tool to investigate domains—finding the exact IP address of a website, details about its hosting provider, and the country/state it is being hosted from.
 
-From a hackers perspective this is not really that usefull tool as it only does very basic stuff that you can use a search engine insted of this but this can be very usefull if you want to use this tool as foundation to make your own osint tool. As I have a feature of json file in this tool so you can simply find api and enter more websites to find info from and this might become a very usefull tool.
+In tech terms this tool automates basic target footprinting, domain infrastructure analysis, and intelligence logging into structured JSON reports.
+
+While you could do some of this manually on a search engine, this tool automates the repetitive work. More importantly, it is built to be a foundation. Because it exports data cleanly to a JSON file, any developer can easily add more APIs and website URLs to the code to make it a massive, highly useful intelligence tool.
+
+**More on how it works side:-**
+Python: The core programming language tying it all together.
+
+Networking (socket & requests): I used Python's built-in socket library to translate website names (like example.com) into real IP addresses. Then, I used the requests library to ping social media sites to see if a username page actually exists (checking if the website returns a '200 OK' or a '404 Not Found').
+
+IP-API: A free geolocation API used to trace where a target IP address is physically located in the real world.
+
+Rich (UI): A Python library I added to make the terminal output colorful, formatted, and easy to read.
 
 
 # Built With
@@ -58,5 +69,14 @@ git clone https://github.com/Dixit106/osint-recon
 After you have files for this project you can open terminal use "cd" to open this folder and type python main.py -u "xyzusername" to get started. You will understand more when you actually use this tool.
 
 Important:- You will have to create and activate venv environment which means this feature will make a seprate environment where you can install python librarys which will not mess with your other projects. 
+```Bash
+python -m venv .venv
+source .venv/bin/activate
+pip install requests rich
+```
 
 Use -d for domain, -u for username and -o for report
+```Bash
+python main.py -u "target_username"
+python main.py -d "target_website(eg.hackclub.com)" -o "report.json"
+```
