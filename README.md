@@ -1,4 +1,4 @@
-# OSINT-RECON
+# Shadow-Trace
 
 # Why I Made This Project
 Everyone who is into tech has at least once thought about being a hacker or doing hacking stuff for fun. I mean, hacking feels like a very cool power that we can have. Just to get a bit of a taste of cybersecurity and hacking, I decided to build a simple OSINT (Open Source Intelligence) tool using Python.
